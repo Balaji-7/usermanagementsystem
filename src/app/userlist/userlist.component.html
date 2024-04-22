@@ -1,0 +1,66 @@
+<br>
+<div class="info">
+<p>To Create a New User click Create user</p>
+<button class="btn btn-primary" (click)="addUser()" *ngIf="auth.loginstatus">Create User</button>
+</div>
+
+<style>
+.info{
+  margin-left: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+table, th, td {
+  margin-left: 10px;
+  border:2px solid black;
+}
+</style>
+<br> <h1 style="margin-left: 350px;">User Details Table</h1><br>
+<table style="width:95%">
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Street</th>
+      <th>City</th>
+      <th>State</th>
+      <th>pincode</th>
+
+    </tr>
+    <!-- <tr>
+      <td>Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+      <td>World</td>
+      <button class="btn btn-primary" style="margin-left: 30px;  margin-bottom: 2px" (click)="addUser()">Add</button>
+      <button class="btn btn-secondary" style="margin-left: 30px;  margin-bottom: 2px" (click)="updateUser()">Update</button>
+      <button class="btn btn-danger" style="margin-left: 30px;  margin-bottom: 2px" (click)="deleteUser()">Delete</button>
+    </tr>
+    <tr>
+      <td>Centro comercial Moctezuma</td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+      <td>World</td>
+      <button class="btn btn-primary" style="margin-left: 30px;  margin-bottom: 2px" (click)="addUser()">Add</button>
+      <button class="btn btn-secondary" style="margin-left: 30px;  margin-bottom: 2px"  (click)="updateUser()">Update</button>
+      <button class="btn btn-danger" style="margin-left: 30px; margin-bottom: 2px" (click)="deleteUser()">Delete</button>
+    </tr> -->
+
+    <tr *ngFor = "let user of userlist;  index as i ">
+      <td>{{i+1}}</td>
+      <td>{{user.name}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.phone}}</td>
+      <td>{{user.address.street}}</td>
+      <td>{{user.address.city}}</td>
+      <td>{{user.address.state}}</td>
+      <td>{{user.address.zip}}</td>
+      <!-- <button class="btn btn-primary" style="margin-left: 30px;  margin-bottom: 2px" (click)="addUser()">Add</button> -->
+      <button class="btn btn-secondary" style="margin-left: 30px;  margin-bottom: 2px" (click)="updateUser(user)">Update</button>
+      <button class="btn btn-danger" style="margin-left: 30px;  margin-bottom: 2px" (click)="deleteUser()">Delete</button>
+    </tr>
+  </table>
+
+<br>
+{{userlist | json}}

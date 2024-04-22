@@ -1,0 +1,7 @@
+<div class="header-container">
+    <div class="logo" (click) = "goToHome()">UserManagement System</div>
+    <div class="logout" (click)="about()">About</div>
+    <div class="logout" (click)="contact()">Contact</div>
+    <div class="logout" (click)="logout()" *ngIf="auth.loginstatus">Logout</div>
+    <div class="logout" (click)="login()" *ngIf="!(auth.loginstatus)">Login</div>
+</div>

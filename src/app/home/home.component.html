@@ -1,0 +1,10 @@
+<div class="home-container"><br>
+    <h1>Welcome to user Management System</h1>
+    <div style="margin: 50px; padding: 5px;">
+    <button class="btn btn-primary" (click)="userlist()" *ngIf="auth.loginstatus">Go to UserList</button> &nbsp;
+    <button class="btn btn-primary" (click)="adduser()" *ngIf="auth.loginstatus">Create User</button>
+
+        <p *ngIf="!(auth.loginstatus)" style="font-size: 30px; font-weight: bold;">Please Login to See the User Details</p>
+    </div>
+
+</div>
